@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Divine Word Ministries | About Us</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="styles.css">
+
+
+<style>
+
+/* ==========================================
+   ABOUT PAGE
+========================================== */
+.about-intro{
+    padding:90px 0;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 20px 45px rgba(0,0,0,.1);
+}
+
+.about-content span{
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.about-content h2{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold);
+    font-size:52px;
+    line-height:1.1;
+}
+
+.about-content p{
+    color:#353535;
+    line-height:1.9;
+}
+
+/* ==========================================
+   PILLARS
+========================================== */
+.pillars{
+    padding:80px 0;
+    background:rgba(248,246,240,.7);
+}
+
+.center-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+
+.center-heading span{
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size:13px;
+}
+
+.center-heading h2{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold);
+    font-size:48px;
+}
+
+.pillar-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.pillar-card{
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.pillar-card i{
+    font-size:35px;
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+.pillar-card h3{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold);
+    font-size:30px;
+}
+
+
+.pillar-card p{
+    color:#353535;
+    line-height:1.7;
+}
+
+/* ==========================================
+   BELIEF
+========================================== */
+
+.belief{
+    padding:90px 0;
+    text-align:center;
+}
+
+.belief h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
+    color:var(--gold);
+
+}
+
+
+.belief p{
+
+    max-width:800px;
+    margin:auto;
+    color:#353535;
+    line-height:1.9;
+
+}
+
+/* ==========================================
+   MINISTRY Moments
+========================================== */
+
+
+.highlights{
+    padding:90px 0;
+    background:rgba(248,246,240,.7);
+}
+
+.highlight-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.highlight-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.highlight-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.highlight-card div{
+    padding:25px;
+}
+
+.highlight-card h3{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold);
+    font-size:28px;
+}
+
+.highlight-card p{
+    color:#353535;
+    line-height:1.7;
+
+}
+
+
+.facebook-link{
+    text-align:center;
+    margin-top:40px;
+}
+
+.facebook-link a{
+    color:var(--gold);
+    text-decoration:none;
+    font-weight:600;
+
+}
+
+@media(max-width:900px){
+
+    .about-grid,
+    .pillar-grid,
+    .highlight-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+
+<header>
+
+
+<div class="container nav-container">
+
+
+<a href="index.html" class="logo">
+
+<img src="images/logo.png"
+alt="Divine Word Ministries Logo">
+
+</a>
+
+
+
+<nav>
+
+<ul class="nav-links">
+
+<li><a href="index.html">HOME</a></li>
+
+<li><a href="about.html">ABOUT</a></li>
+
+<li><a href="resources.html">RESOURCES</a></li>
+
+<li><a href="blog.html">BLOG</a></li>
+
+<li><a href="contact.html">CONTACT</a></li>
+
+</ul>
+
+</nav>
+
+
+
+<div class="menu-btn">
+
+☰
+
+</div>
+
+
+
+</div>
+
+
+</header>
+
+
+
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+<div class="overlay"></div>
+<div class="hero-content">
+
+<p class="hero-small">
+ABOUT US
+</p>
+
+<h1>
+Divine Word Ministries is a Bible-believing Ministry.
+</h1>
+</div>
+</section>
+
+
+<!-- ================= ABOUT INTRO ================= -->
+
+<section class="about-intro">
+<div class="container about-grid">
+
+<div class="about-content">
+
+<h2>
+A Bible-Believing Church
+</h2>
+
+
+<p>
+We believe in Jesus Christ, and in the authority of His Word.
+</p>
+
+<p>
+Our desire is to see lives transformed through the Word of God, prayer and worship, helping people grow in their relationship with Christ and represent Him in every sphere of life.
+</p>
+
+
+</div>
+
+<div class="about-image">
+
+<img src="images/about.jpg">
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+<!-- ================= PILLARS ================= -->
+<section class="pillars">
+
+<div class="container">
+<div class="center-heading">
+
+<span>
+OUR FOUNDATION
+</span>
+
+<h2>
+Our Pillars
+</h2>
+
+
+</div>
+
+
+
+<div class="pillar-grid">
+
+
+<div class="pillar-card">
+
+<img src="images/word.jpg"
+alt="The Word of God">
+
+
+<div class="pillar-content">
+
+<h3>
+Word
+</h3>
+
+<p>
+We are established upon the truth and authority of God's Word.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+<div class="pillar-card">
+
+<img src="images/prayer.jpg"
+alt="Prayer">
+
+
+<div class="pillar-content">
+
+<h3>
+Prayer
+</h3>
+
+<p>
+We believe in fellowship with God through prayer and dependence on Him.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+<div class="pillar-card">
+
+<img src="images/worship.jpg"
+alt="Worship">
+
+
+<div class="pillar-content">
+
+<h3>
+Worship
+</h3>
+
+<p>
+We worship Jesus, the only true God.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- ================= BELIEF ================= -->
+
+
+<section class="belief">
+
+
+<div class="container">
+
+
+<h2>
+Our Belief
+</h2>
+
+
+<p>
+
+We believe Jesus Christ died for the salvation of souls. Our hope is that as many people as we can reach would receive Him, live for Christ, and represent Him in every sphere of life.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+<!-- ================= MINISTRY HIGHLIGHTS ================= -->
+<section class="highlights">
+<div class="container">
+
+<div class="center-heading">
+<h2>
+Ministry Moments
+</h2>
+
+<p>
+
+Moments from the journey of Divine Word Ministries.
+
+</p>
+
+
+</div>
+
+<div class="highlight-grid">
+
+<div class="highlight-card">
+
+<img src="images/evangelism.jpg">
+
+<div>
+
+<h3>
+Evangelism
+</h3>
+
+<p>
+Preaching Christ.
+</p>
+
+
+</div>
+
+</div>
+
+
+<div class="highlight-card">
+
+
+<img src="images/heart-to-heart.jpg">
+
+
+<div>
+
+<h3>
+Heart to Heart Conference
+</h3>
+
+<p>
+A gathering centred around worshipping Jesus.
+</p>
+
+
+</div>
+
+</div>
+
+
+<div class="highlight-card">
+
+<img src="images/word-expo.jpg">
+
+
+<div>
+
+<h3>
+Word Expo Conference
+</h3>
+
+<p>
+A Word-focused gathering.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="facebook-link">
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+
+<footer>
+
+
+<div class="container footer-grid">
+
+
+<div>
+
+
+<h3>
+DIVINE WORD MINISTRIES
+</h3>
+
+
+<div class="social-links">
+
+
+<a href="https://youtube.com/" target="_blank">
+
+<i class="fab fa-youtube"></i>
+
+</a>
+
+
+<a href="https://facebook.com/" target="_blank">
+
+<i class="fab fa-facebook-f"></i>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<div>
+
+
+<h4>
+Quick Links
+</h4>
+
+
+<p>
+Blogs
+</p>
+
+
+<p>
+Resources
+</p>
+
+
+<p>
+Location
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="copyright">
+
+© 2026 Divine Word Ministries.
+All Rights Reserved.
+
+</div>
+
+
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
