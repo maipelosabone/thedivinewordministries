@@ -13,19 +13,10 @@
     <!-- ================= CONTACT PAGE CSS ================= -->
 
     <style>
-
-   
-
-
-   /* ==========================================
-   CONTACT LOCATION
-========================================== */
-
 .contact-location{
     padding:70px 0;
-    background:rgba(212, 209, 200, 0.7);
+    background:#b6aa80;
 }
-
 
 .contact-grid{
     display:grid;
@@ -36,28 +27,25 @@
 
 .contact-info h2{
     font-family:'Cormorant Garamond',serif;
-    color:var(--gold);
+    color: whitesmoke;
     font-size:42px;
     margin-bottom:15px;
 
 }
 
-
-.contact-info p{
-    color:#282626;
+.contact-info p, .contact-item h4{
+    color:rgb(32, 30, 30);
     line-height:1.7;
     font-size:15px;
 }
 
-
 .section-small{
     letter-spacing:1px;
     font-size:12px;
-    color:var(--gold);
+    color:black;
     font-weight:600;
 
 }
-
 
 .contact-item{
     display:flex;
@@ -65,7 +53,6 @@
     margin-top:22px;
     align-items:flex-start;
 }
-
 
 .contact-item i{
     width:38px;
@@ -79,55 +66,122 @@
     font-size:14px;
 }
 
-
 .contact-item h4{
     margin:0 0 3px;
     font-family:'Cormorant Garamond',serif;
-    font-size:21px;
+    font-size:20px;
 }
-
 
 .contact-item p{
-
     margin:0;
-
 }
-
 
 .map-container{
-
     height:330px;
-
     border-radius:20px;
-
     overflow:hidden;
-
     box-shadow:0 15px 35px rgba(0,0,0,.10);
-
 }
-
 
 .map-container iframe{
-
     width:100%;
-
     height:100%;
-
     border:0;
-
 }
 
+/* ==========================================
+   INQUIRY MODAL
+========================================== */
 
-@media(max-width:900px){
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+}
 
-    .contact-grid{
+.modal.active{
+    display:flex;
+}
 
-        grid-template-columns:1fr;
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:550px;
+    padding:40px;
+    border-radius:20px;
+    position:relative;
+    animation:popup .35s ease;
+}
 
+.modal-content .btn{
+    width:auto;
+    display:inline-block;
+    align-self:center;
+    padding:14px 40px;
+}
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 
 }
 
+
+.close-modal{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:30px;
+    cursor:pointer;
+    color:#999;
+}
+
+.modal-content h2{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold);
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+.modal-content form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea{
+    width:100%;
+    padding:15px 18px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    font-family:'Inter',sans-serif;
+}
+
+.modal-content textarea{
+    resize:vertical;
+    min-height:140px;
+}
+
+@media(max-width:900px){
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
     </style>
 
 </head>
@@ -150,6 +204,13 @@
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </nav>
+
+         <!-- SEARCH BUTTON -->
+<div class="nav-actions">
+    <a href="#" class="search-btn" aria-label="Search">
+        <i class="fas fa-search"></i>
+    </a>
+</div>
         <!-- MOBILE MENU -->
         <div class="menu-btn">
             ☰
@@ -170,10 +231,10 @@
         <h1>
             Reach out to Us
         </h1>
-
-         <a href="#inquiry-form" class="btn gold">
-        Send Inquiry
-    </a>
+         <button class="btn gold" id="openInquiry" style="border-color: white; background-color: white; 
+         color: var(--gold);" >
+    Send an Inquiry
+</button>
     </div>
 </section>
 
@@ -188,11 +249,7 @@
                 Find Us
             </h2>
 
-            <p>
-                We would love to welcome you.
-                Visit Divine Word Ministries and connect with us in person.
-            </p>
-
+            <p> Visit The Divine Word Ministries and connect with us in person.</p>
 
             <div class="contact-item">
 
@@ -201,6 +258,7 @@
                 <div>
                     <h4>Location</h4>
                     <p>
+                        Progress House Building,
                         Middle Star Mall<br>
                         Gaborone, Botswana
                     </p>
@@ -240,8 +298,6 @@
 
         </div>
 
-
-
         <div class="map-container">
 
             <iframe
@@ -251,17 +307,76 @@
 
         </div>
 
-
     </div>
 
 </section>
+
+<!-- ================= INQUIRY MODAL ================= -->
+<div class="modal" id="inquiryModal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Make an Inquiry</h2>
+        <form>
+            <input
+                type="text"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                placeholder="Email Address"
+                required>
+
+            <input
+                type="tel"
+                placeholder="Phone Number (Optional)">
+
+            <select required>
+
+                <option value="">
+                    Select Inquiry Category
+                </option>
+
+                <option>
+                    General Inquiry
+                </option>
+
+                <option>
+                    Visiting the Church
+                </option>
+
+                <option>
+                    Partnership
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
+
+            <textarea
+                rows="6"
+                placeholder="Your Message"
+                required></textarea>
+
+            <button
+                type="submit"
+                class="btn gold">
+
+                SEND
+
+            </button>
+        </form>
+    </div>
+</div>
 
 <!-- ================= FOOTER ================= -->
 <footer>
     <div class="container footer-grid">
         <div>
             <h3>
-                DIVINE WORD MINISTRIES
+                THE DIVINE WORD MINISTRIES
         <div class="social-links">
 
     <a href="https://youtube.com/"
@@ -276,30 +391,57 @@
         <i class="fab fa-facebook-f"></i>
     </a>
 
+     <a href="https://whatsapp.com/channel/0027VbCUIrP6rsR1pr3t3K3R"
+       target="_blank"
+       aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 </div>
         </div>
         <div>
-            <h4>
-                Quick Links
-            </h4>
-            <p>
-                Blogs
-            </p>
-            <p>
-                Resources
-            </p>
-            <p>
-               Location
-            </p>
+            <p>Blogs</p>
+            <p>Resources</p>
+            <p>Location</p>
         </div>
     </div>
 
     <div class="copyright">
-        © 2026 Divine Word Ministries.
+        © 2026 The Divine Word Ministries.
         All Rights Reserved.
     </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+   document.addEventListener("DOMContentLoaded", function(){
+
+    const openBtn = document.getElementById("openInquiry");
+    const modal = document.getElementById("inquiryModal");
+    const closeBtn = document.querySelector(".close-modal");
+
+    openBtn.addEventListener("click", function(){
+
+        modal.classList.add("active");
+
+    });
+
+    closeBtn.addEventListener("click", function(){
+
+        modal.classList.remove("active");
+
+    });
+
+    window.addEventListener("click", function(e){
+
+        if(e.target === modal){
+
+            modal.classList.remove("active");
+
+        }
+
+    });
+
+});
+</script>
 </body>
 </html>

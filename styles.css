@@ -137,23 +137,15 @@ nav{
 .search-btn {
     width: 42px;
     height: 42px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     color: var(--gold);
-
     background: rgba(255,255,255,0.8);
-
     font-size: 18px;
-
     text-decoration: none;
-
     transition: .3s ease;
-
     box-shadow: 0 5px 15px rgba(0,0,0,.08);
 }
 
@@ -162,7 +154,6 @@ nav{
     color: white;
     transform: translateY(-2px);
 }
-
 
 /* Mobile menu button */
 
@@ -174,51 +165,52 @@ nav{
 
 /* ================= HERO ================= */
 
-.hero {
-    position: relative;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    background: url('../images/hero.jpg') center/cover no-repeat;
+.hero{
+    position:relative;
+    height:75vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:var(--navy);
+    background:url("images/hero.jpg") center/cover no-repeat;
+
 }
 
-.hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(31, 78, 121, 0.75);
+.hero .overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,.78);
 }
 
-.hero-content {
-    position: relative;
-    max-width: 800px;
-    padding: 20px;
+.hero-content{
+    position:relative;
+    max-width:800px;
+    padding:20px;
 }
 
-.hero-small {
-    font-family: 'Inter', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 14px;
-    font-weight: 500;
+.hero-small{
+    font-family:'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:14px;
+    font-weight:600;
+    color:var(--gold);
 }
 
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px;
-    line-height: 1.2;
-    margin-bottom: 20px;
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:35px;
+    line-height:1.2;
+    margin-bottom:20px;
+    color:var(--gold);
+
 }
 
-.hero p {
-    font-size: 16px;
-    margin-bottom: 30px;
-    color: #f0f0f0;
+.hero p{
+    font-size:17px;
+    margin-bottom:30px;
+    color:black;
 }
 
 /* ================= BUTTONS ================= */
@@ -242,16 +234,21 @@ nav{
     background: #c49f2f;
 }
 
-.btn.white {
-    border: 2px solid var(--white);
-    color: var(--white);
+.btn.white{
+
+    border:2px solid var(--navy);
+
+    color:var(--navy);
+
 }
 
-.btn.white:hover {
-    background: var(--white);
-    color: var(--navy);
-}
+.btn.white:hover{
 
+    background:var(--navy);
+
+    color:white;
+
+}
 /* ================= SECTIONS ================= */
 
 section {
@@ -277,99 +274,82 @@ section {
 }
 
 /* ================= ABOUT PREVIEW ================= */
+.about-preview{
+    position:relative;
+    padding:100px 0;
+    background:
+        linear-gradient(
+            rgba(10,15,25,.68),
+            rgba(10,15,25,.68)
+        ),
+        url("images/blog.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
 
-.about-preview {
+.about-content{
+    max-width:850px;
+    margin:auto;
+    text-align:justify;
+}
 
-    padding: 100px 0;
-    background: #ece1b9;
+.intro-text{
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    line-height:1.4;
+    color:rgba(255,255,255,.95);
+    font-weight:500;
+}
+
+.intro-text span{
+    color:var(--gold);
+    font-weight:600;
+    text-transform:uppercase;
+}
+
+.about-content p:not(.intro-text){
+    font-family:'Inter',sans-serif;
+    font-size:18px;
+    line-height:1.8;
+    margin-top:30px;
+    color:rgba(255,255,255,.88);
 
 }
 
-
-.about-content {
-
-    max-width: 850px;
-    margin: auto;
-    text-align: justify;
-
-}
-
-
-.intro-text {
-
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    line-height: 1.3;
-    color: var(--grey);
-    font-weight: 500;
+.about-buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
 
 }
-
-
-.intro-text span {
-
-    color: var(--gold);
-    font-weight: 500;
-    text-transform: uppercase;
-
-}
-
-
-.about-content p:not(.intro-text) {
-
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    line-height: 1.8;
-    margin-top: 30px;
-    color: #444;
-
-}
-
-
-.about-buttons {
-
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-
-}
-
 /* ================= SECONDARY BUTTON ================= */
 
 .btn.outline {
-
     background: transparent;
-    color: var(--gold);
-    border: 2px solid var(--gold);
-
+    color: white;
+    border: 2px solid white;
 }
 
-
 .btn.outline:hover {
-
     background: var(--navy);
     color: white;
-
 }
 
 /* ================= RESOURCES ================= */
-
 .resources{
-
     background:
-        rgba(181, 182, 184, 0.75)
+        #615321
         url("images/hero.jpg");
-
     background-size: cover;
     background-position: center;
-
     padding:100px 0;
-
 }
 
 .resources h2{
-    color: rgb(67, 65, 65);
+    color: white;
 }
 
 
