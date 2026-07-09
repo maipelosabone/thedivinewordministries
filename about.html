@@ -75,29 +75,98 @@
 }
 
 .pillar-card{
-    background:white;
-    padding:35px;
+
+    position:relative;
+
+    min-height:300px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     text-align:center;
-    border-radius:18px;
+
     box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    background-size:cover;
+
+    background-position:center;
+
 }
 
-.pillar-card i{
-    font-size:35px;
-    color:var(--gold);
-    margin-bottom:20px;
+.pillar-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(10,15,25,.58);
+
+    transition:.35s ease;
+
 }
 
-.pillar-card h3{
+.pillar-card:hover::before{
+
+    background:rgba(10,15,25,.45);
+
+}
+
+
+.pillar-content{
+
+    position:relative;
+
+    z-index:2;
+
+    padding:35px;
+
+}
+
+.pillar-content h3{
+
     font-family:'Cormorant Garamond',serif;
-    color:var(--gold);
-    font-size:25px;
+
+    color:whitesmoke;
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
 }
 
+.pillar-content p{
 
-.pillar-card p{
-    color:#353535;
-    line-height:1.9;
+    color:rgba(255,255,255,.92);
+
+    line-height:1.8;
+
+}
+
+.word{
+
+    background-image:url("images/blog.png");
+
+}
+
+.prayer{
+
+    background-image:url("images/prayer.png");
+
+}
+
+.worship{
+
+    background-image:url("images/h2h.png");
+
 }
 
 /* ==========================================
@@ -224,13 +293,16 @@ A Bible-based Ministry.
 <h2>
 A Bible-Believing Church
 </h2>
-<p >We believe in Jesus Christ, and in the authority of His Word.</p>
-<p>Our desire is to see lives transformed through the Word of God, helping people grow in their relationship with Jesus and 
-represent Him in every sphere of life.</p>
+<p style="color:rgb(34, 32, 32)">We believe in Jesus Christ, and in the authority of His Word. His Word revealed, His Present Word, 
+    and Word to be revealed. </p>
+<p style="color:rgb(34, 32, 32)">Our desire is for people
+    to know and love Jesus, for lives to be transformed by the Word of God, and for people to
+    grow in their relationship with Jesus, serving Him and 
+representing Him in every sphere of life.</p>
 
 </div>
 <div class="about-image">
-<img src="images/about.jpg">
+<img src="images/logo.png">
 </div>
 </div>
 </section>
@@ -246,62 +318,53 @@ Our Pillars
 
 </div>
 <div class="pillar-grid">
-<div class="pillar-card">
 
-<img src="images/word.jpg"
-alt="The Word of God">
+    <div class="pillar-card word">
 
-<div class="pillar-content">
-<h3>
-Word
-</h3>
-<p>
-We are established upon the truth and authority of God's Word.
-</p>
+        <div class="pillar-content">
 
-</div>
-</div>
+            <h3>Word</h3>
 
-<div class="pillar-card">
+            <p>
+                We believe in the authority of Scripture.
+            </p>
 
-<img src="images/prayer.jpg"
-alt="Prayer">
+        </div>
 
-<div class="pillar-content">
-
-<h3>
-Prayer
-</h3>
-
-<p>
-"Man ought always to pray, and not faint."
-</p>
-
-</div>
-
-</div>
-
-<div class="pillar-card">
-
-<img src="images/worship.jpg"
-alt="Worship">
+    </div>
 
 
-<div class="pillar-content">
+    <div class="pillar-card prayer">
 
-<h3>
-Worship
-</h3>
+        <div class="pillar-content">
 
-<p>
-We worship Jesus, the only true God, and aim to worship Him with all our lives, and in song. 
-</p>
+            <h3>Prayer</h3>
+
+            <p>
+                "Man ought always to pray, and not faint."
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="pillar-card worship">
+
+        <div class="pillar-content">
+
+            <h3>Worship</h3>
+
+            <p>We worship Jesus, the only true God, and desire to worship Him with our lives.</p>
+
+        </div>
+
+    </div>
 
 </div>
 
 </div>
 
-</div>
 </section>
 
 <!-- ================= MINISTRY HIGHLIGHTS ================= -->

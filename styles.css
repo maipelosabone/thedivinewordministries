@@ -180,7 +180,7 @@ nav{
 .hero .overlay{
     position:absolute;
     inset:0;
-    background:rgba(255,255,255,.78);
+    background:rgba(31, 78, 121, 0.75);
 }
 
 .hero-content{
@@ -192,10 +192,10 @@ nav{
 .hero-small{
     font-family:'Inter',sans-serif;
     text-transform:uppercase;
-    letter-spacing:3px;
+    letter-spacing:2px;
     font-size:14px;
     font-weight:600;
-    color:var(--gold);
+    color:white;
 }
 
 .hero h1{
@@ -203,14 +203,14 @@ nav{
     font-size:35px;
     line-height:1.2;
     margin-bottom:20px;
-    color:var(--gold);
+    color:white;
 
 }
 
 .hero p{
     font-size:17px;
     margin-bottom:30px;
-    color:black;
+    color:rgb(245, 232, 232);
 }
 
 /* ================= BUTTONS ================= */
@@ -296,11 +296,13 @@ section {
 }
 
 .intro-text{
-    font-family:'Cormorant Garamond',serif;
-    font-size:20px;
+    font-family: 'Inter', sans-serif;
+    color: var(--black);
+    font-size: 20px;
+    margin: 20px 0;
     line-height:1.4;
     color:rgba(255,255,255,.95);
-    font-weight:500;
+    font-weight:300;
 }
 
 .intro-text span{

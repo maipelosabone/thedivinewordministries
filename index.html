@@ -48,14 +48,13 @@
 </header>
 <!-- ================= HERO ================= -->
 <section class="hero reveal">
-    <div class="overlay"></div>
+    <div class="overlay" style="background-color: white;"></div>
     <div class="hero-content">
 
-        <p class="hero-small">
+        <h1 style="color: var(--gold)">
             Welcome to The Divine Word Ministries
-        </p>
+        </h1>
 
-        <h1>Teaching Christ.<br> Raising Christ-centred People.</h1>
     </div>
 </section>
 
@@ -68,10 +67,10 @@
             </h2>
         </div>
         <div class="about-content">
-            <p class="intro-text">
-
+            
+<p style="color:white">
 The Divine Word Ministries is a 
-<span>
+<span style="color:white">
 BIBLE-BELIEVING
 </span>
 <br>
@@ -79,11 +78,11 @@ BIBLE-BELIEVING
 and <span> CHRIST-CENTRED</span>
 ministry.
 </p>
-            <p class="intro-text">
+            <p>
                 Our desire is for people to know Jesus, <br>
                 walk with Him,
                and faithfully represent Him in every sphere of life.
-            </p class="intro-text">
+            </p>
 
             <div class="about-buttons">
 
@@ -138,7 +137,7 @@ ministry.
                 <div class="resource-slide">
 
                     <div class="resource-image">
-                        <img src="images/zion.jpeg"
+                        <img src="images/wordKind.png"
                              alt="Teaching">
                     </div>
 
@@ -174,38 +173,24 @@ ministry.
                 </div>
 
                 <!-- BLOG CARD -->
-
                 <div class="resource-slide">
-
                     <div class="resource-image">
-                        <img src="images/Jesus.png"
+                        <img src="images/harvest.png"
                              alt="Jesus Christ">
                     </div>
 
-
-                    <h4>
-                        Jesus: The Altar
-                    </h4>
-
-
+                    <h4>A Harvest of Many Seasons</h4>
                     <a href="blog.html"
                        class="resource-link">
                        Read Article
                     </a>
-
                 </div>
-
             </div>
-
             <button class="carousel-btn right" onclick="scrollCarousel(this, 1)">
                 &#10095;
             </button>
-
         </div>
-
-
     </div>
-
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -259,17 +244,11 @@ ministry.
 <script>
 
 function scrollCarousel(button, direction) {
-
     const carousel = button.parentElement.querySelector(".resource-carousel");
-
     carousel.scrollBy({
-
         left: direction * 350,
-
         behavior: "smooth"
-
     });
-
 }
 
 /* ================= SCROLL REVEAL ================= */
