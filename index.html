@@ -32,20 +32,50 @@
             </ul>
         </nav>
 
-         <!-- SEARCH BUTTON -->
-<div class="nav-actions">
-    <a href="#" class="search-btn" aria-label="Search">
-        <i class="fas fa-search"></i>
-    </a>
-</div>
-
         <!-- MOBILE MENU -->
         <div class="menu-btn">
             ☰
         </div>
+
+         <div class="nav-actions">
+
+            <button class="search-btn" id="searchBtn" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+
+            <button class="menu-btn" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
     </div>
 
 </header>
+
+<!-- ================= SEARCH OVERLAY ================= -->
+
+<div class="search-overlay" id="searchOverlay">
+
+    <div class="search-box">
+
+        <button class="close-search" id="closeSearch">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <h2>Search Divine Word Ministries</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search sermons, articles, pages..."
+        >
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
+
 <!-- ================= HERO ================= -->
 <section class="hero reveal">
     <div class="overlay" style="background-color: white;"></div>
@@ -82,7 +112,7 @@ ministry.
 
             <div class="about-buttons">
 
-                <a href="RESOURCES.html" class="btn gold">
+                <a href="about.html" class="btn gold">
                     Learn More</a>
             </div>
         </div>
@@ -91,7 +121,6 @@ ministry.
 </section>
 
 <!-- ================= RESOURCES ================= -->
-
 <section class="resources reveal">
     <div class="container">
         <div class="section-heading">
@@ -108,6 +137,10 @@ ministry.
 
                 <!-- TEACHING CARD -->
                 <div class="resource-slide">
+
+                    <span class="resource-badge teaching">
+    Teaching
+</span>
                     <div class="resource-image">
                         <img src="images/zion.jpeg"
                              alt="Teaching">
@@ -143,6 +176,8 @@ ministry.
 
                 <!-- BLOG CARD -->
                 <div class="resource-slide">
+
+                    
 
                     <div class="resource-image">
                         <img src="images/Jesus.png"
@@ -208,6 +243,7 @@ ministry.
         </div>
         <div>
              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="resources.html">Blog</a></li>
                 <li><a href="blog.html">Resources</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -216,20 +252,134 @@ ministry.
     </div>
 
     <div class="copyright">
-        © 2026 The Divine Word Ministries.
-        All Rights Reserved. Made by KORA
+        © 2026 The Divine Word Ministries. All Rights Reserved. <br>Made by KORA
     </div>
 
 </footer>
 
 <script>
-function scrollCarousel(button, direction) {
-    const carousel = button.parentElement.querySelector(".resource-carousel");
-    carousel.scrollBy({
-        left: direction * 350,
-        behavior: "smooth"
-    });
+const carousel = document.querySelector(".resource-carousel");
+
+const card = document.querySelector(".resource-slide");
+
+const scrollAmount = card.offsetWidth + 40;
+
+let autoSlide = setInterval(nextSlide,5000);
+
+function nextSlide(){
+
+    if(
+        carousel.scrollLeft + carousel.clientWidth
+        >=
+        carousel.scrollWidth - 5
+    ){
+
+        carousel.scrollTo({
+
+            left:0,
+
+            behavior:"smooth"
+
+        });
+
+    }
+
+    else{
+
+        carousel.scrollBy({
+
+            left:scrollAmount,
+
+            behavior:"smooth"
+
+        });
+
+    }
+
 }
+
+function scrollCarousel(button,direction){
+
+    clearInterval(autoSlide);
+
+    carousel.scrollBy({
+
+        left:direction*scrollAmount,
+
+        behavior:"smooth"
+
+    });
+
+    autoSlide=setInterval(nextSlide,5000);
+
+}
+
+carousel.addEventListener("mouseenter",()=>{
+
+    clearInterval(autoSlide);
+
+});
+
+carousel.addEventListener("mouseleave",()=>{
+
+    autoSlide=setInterval(nextSlide,5000);
+
+});
+
+const slides = document.querySelectorAll(".resource-slide");
+
+function updateActiveCard(){
+
+    const center =
+        carousel.scrollLeft +
+        carousel.clientWidth/2;
+
+    slides.forEach(slide=>{
+
+        slide.classList.remove("active");
+        slide.classList.remove("neighbour");
+
+    });
+
+    let closest = null;
+
+    let distance = Infinity;
+
+    slides.forEach(slide=>{
+
+        const slideCenter =
+            slide.offsetLeft +
+            slide.offsetWidth/2;
+
+        const d = Math.abs(center-slideCenter);
+
+        if(d<distance){
+
+            distance=d;
+
+            closest=slide;
+
+        }
+
+    });
+
+    if(closest){
+
+        closest.classList.add("active");
+
+        if(closest.previousElementSibling)
+            closest.previousElementSibling.classList.add("neighbour");
+
+        if(closest.nextElementSibling)
+            closest.nextElementSibling.classList.add("neighbour");
+
+    }
+
+}
+
+carousel.addEventListener("scroll",updateActiveCard);
+
+updateActiveCard();
 
 /* ================= SCROLL REVEAL ================= */
 const reveals = document.querySelectorAll(".reveal");
@@ -247,6 +397,117 @@ function revealSections() {
 }
 window.addEventListener("scroll", revealSections);
 window.addEventListener("load", revealSections);
+
+/* ================= MENU BUTTON ================= */
+
+const menuBtn = document.querySelector(".menu-btn");
+
+const nav = document.querySelector("nav");
+
+menuBtn.addEventListener("click", ()=>{
+
+    nav.classList.toggle("active");
+
+});
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        nav.classList.remove("active");
+
+    });
+
+});
+
+document.addEventListener("click",(e)=>{
+
+    if(
+        !nav.contains(e.target) &&
+        !menuBtn.contains(e.target)
+    ){
+        nav.classList.remove("active");
+    }
+
+});
+
+/* ================= search BUTTON ================= */
+
+const searchBtn=document.getElementById("searchBtn");
+
+const overlay=document.getElementById("searchOverlay");
+
+const closeSearch=document.getElementById("closeSearch");
+
+searchBtn.addEventListener("click",()=>{
+
+    overlay.classList.add("active");
+
+    searchInput.focus();
+
+});
+
+closeSearch.addEventListener("click",()=>{
+
+    overlay.classList.remove("active");
+
+});
+
+overlay.addEventListener("click",(e)=>{
+
+    if(e.target===overlay){
+
+        overlay.classList.remove("active");
+
+    }
+
+});
+
+const searchInput=document.getElementById("searchInput");
+
+const results=document.getElementById("searchResults");
+
+searchInput.addEventListener("input",()=>{
+
+const value=searchInput.value.toLowerCase();
+
+results.innerHTML="";
+
+if(value==="") return;
+
+const matches=pages.filter(page=>
+
+page.title.toLowerCase().includes(value) ||
+
+page.text.toLowerCase().includes(value)
+
+);
+
+if(matches.length===0){
+
+results.innerHTML="<p>No results found.</p>";
+
+return;
+
+}
+
+matches.forEach(page=>{
+
+results.innerHTML+=`
+
+<div class="search-result">
+
+<a href="${page.url}">${page.title}</a>
+
+<p>${page.text}</p>
+
+</div>
+
+`;
+
+});
+
+});
 
 </script>
 
