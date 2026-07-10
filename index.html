@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Divine Word Ministries | Teaching Christ. Raising Christ-centred People.</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+   
 </head>
 
 <body>
-
 <!-- ================= NAVIGATION ================= -->
-
 <header>
     <div class="container nav-container">
         <!-- LOGO (IMAGE) -->
@@ -50,10 +50,8 @@
 <section class="hero reveal">
     <div class="overlay" style="background-color: white;"></div>
     <div class="hero-content">
-
         <h1 style="color: var(--gold)">
-            Welcome to The Divine Word Ministries
-        </h1>
+            Welcome to The Divine Word Ministries</h1>
 
     </div>
 </section>
@@ -78,18 +76,14 @@ BIBLE-BELIEVING
 and <span> CHRIST-CENTRED</span>
 ministry.
 </p>
-            <p>
-                Our desire is for people to know Jesus, <br>
+            <p>Our desire is for people to know Jesus, <br>
                 walk with Him,
-               and faithfully represent Him in every sphere of life.
-            </p>
+               and faithfully represent Him in every sphere of life.</p>
 
             <div class="about-buttons">
 
                 <a href="RESOURCES.html" class="btn gold">
-                    Learn More
-                </a>
-
+                    Learn More</a>
             </div>
         </div>
     </div>
@@ -101,10 +95,8 @@ ministry.
 <section class="resources reveal">
     <div class="container">
         <div class="section-heading">
-
             <h2 style="color: whitesmoke;">Resources</h2>
             <p style="color: whitesmoke;">Explore Bible-based teachings to help you in your journey in Christ.</p>
-
         </div>
 
         <div class="carousel-wrapper">
@@ -142,17 +134,14 @@ ministry.
                     </div>
 
                     <h4> The Word Kind</h4>
-
                     <a href="https://youtu.be/MDcb3KrWJTg?si=JA8hSaczJom7BCv"
                        target="_blank"
                        class="resource-link">
                        Watch on YouTube
                   </a>
-
                 </div>
 
                 <!-- BLOG CARD -->
-
                 <div class="resource-slide">
 
                     <div class="resource-image">
@@ -160,11 +149,7 @@ ministry.
                              alt="Jesus Christ">
                     </div>
 
-
-                    <h4>
-                        Christ the Sacrifice
-                    </h4>
-
+                    <h4>Christ the Sacrifice</h4>
 
                     <a href="blog.html"
                        class="resource-link">
@@ -180,7 +165,7 @@ ministry.
                     </div>
 
                     <h4>A Harvest of Many Seasons</h4>
-                    <a href="blog.html"
+                    <a href="harvest.html"
                        class="resource-link">
                        Read Article
                     </a>
@@ -221,28 +206,23 @@ ministry.
 
 </div>
         </div>
-
         <div>
-            <p>Blogs</p>
-            <p> Resources</p>
-            <p>Location</p>
-
+             <ul class="footer-links">
+                <li><a href="resources.html">Blog</a></li>
+                <li><a href="blog.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
-
-
     </div>
 
     <div class="copyright">
-
         © 2026 The Divine Word Ministries.
-        All Rights Reserved.
-
+        All Rights Reserved. Made by KORA
     </div>
 
 </footer>
 
 <script>
-
 function scrollCarousel(button, direction) {
     const carousel = button.parentElement.querySelector(".resource-carousel");
     carousel.scrollBy({
@@ -252,28 +232,20 @@ function scrollCarousel(button, direction) {
 }
 
 /* ================= SCROLL REVEAL ================= */
-
 const reveals = document.querySelectorAll(".reveal");
-
 function revealSections() {
 
     reveals.forEach(section => {
-
         const windowHeight = window.innerHeight;
         const sectionTop = section.getBoundingClientRect().top;
 
         if (sectionTop < windowHeight - 120) {
-
             section.classList.add("active");
-
         }
-
     });
 
 }
-
 window.addEventListener("scroll", revealSections);
-
 window.addEventListener("load", revealSections);
 
 </script>

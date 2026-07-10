@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divine Word Ministries | Get in Touch.</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -15,7 +16,7 @@
     <style>
 .contact-location{
     padding:70px 0;
-    background:#b6aa80;
+    background:#dddbd7;
 }
 
 .contact-grid{
@@ -27,14 +28,14 @@
 
 .contact-info h2{
     font-family:'Cormorant Garamond',serif;
-    color: whitesmoke;
+    color: rgb(44, 42, 42);
     font-size:42px;
     margin-bottom:15px;
 
 }
 
 .contact-info p, .contact-item h4{
-    color:rgb(32, 30, 30);
+    color:rgb(22, 21, 21);
     line-height:1.7;
     font-size:15px;
 }
@@ -232,7 +233,7 @@
             Reach out to Us
         </h1>
          <button class="btn gold" id="openInquiry" style="border-color: white; background-color: white; 
-         color: var(--gold);" >
+         color: rgb(77, 71, 71);" >
     Send an Inquiry
 </button>
     </div>
@@ -241,44 +242,28 @@
 <!-- ================= CONTACT LOCATION ================= -->
 
 <section class="contact-location">
-
     <div class="container contact-grid">
-
         <div class="contact-info">
-            <h2>
-                Find Us
-            </h2>
-
+            <h2>Connect with Us</h2>
             <p> Visit The Divine Word Ministries and connect with us in person.</p>
 
             <div class="contact-item">
-
                 <i class="fas fa-location-dot"></i>
-
                 <div>
-    
                     <p>
                         Progress House Building,
                         Middle Star Mall<br>
                         Gaborone, Botswana
                     </p>
                 </div>
-
             </div>
-
 
             <div class="contact-item">
-
                 <i class="fas fa-clock"></i>
-
                 <div>
-                    <p>
-                        Sundays 9:30a.m - 12:30p.m
-                    </p>
+                    <p> Sundays 9:30a.m - 12:30p.m</p>
                 </div>
-
             </div>
-
 
             <div class="contact-item">
                 <i class="fas fa-envelope"></i>
@@ -288,11 +273,9 @@
 
             </div>
 
-
         </div>
 
         <div class="map-container">
-
             <iframe
             src="https://www.google.com/maps?q=Middle%20Star%20Mall%20Gaborone%20Botswana&output=embed"
             loading="lazy">
@@ -392,16 +375,19 @@
 
 </div>
         </div>
-        <div>
-            <p>Blogs</p>
-            <p>Resources</p>
-            <p>Location</p>
+         <div>
+             <ul class="footer-links">
+                <li><a href="resources.html">Blog</a></li>
+                <li><a href="blog.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
+
     </div>
 
     <div class="copyright">
         © 2026 The Divine Word Ministries.
-        All Rights Reserved.
+        All Rights Reserved. Made by KORA
     </div>
 </footer>
 
@@ -413,27 +399,17 @@
     const closeBtn = document.querySelector(".close-modal");
 
     openBtn.addEventListener("click", function(){
-
         modal.classList.add("active");
-
     });
-
     closeBtn.addEventListener("click", function(){
-
         modal.classList.remove("active");
-
     });
 
     window.addEventListener("click", function(e){
-
         if(e.target === modal){
-
             modal.classList.remove("active");
-
         }
-
     });
-
 });
 </script>
 </body>
