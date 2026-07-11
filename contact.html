@@ -1,98 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine Word Ministries | Get in Touch.</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divine Word Ministries | Connect</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 
-    <!-- ================= CONTACT PAGE CSS ================= -->
-
-    <style>
-.contact-location{
-    padding:70px 0;
-    background:#dddbd7;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1.1fr;
-    gap:50px;
-    align-items:center;
-}
-
-.contact-info h2{
-    font-family:'Cormorant Garamond',serif;
-    color: rgb(44, 42, 42);
-    font-size:42px;
-    margin-bottom:15px;
-
-}
-
-.contact-info p, .contact-item h4{
-    color:rgb(22, 21, 21);
-    line-height:1.7;
-    font-size:15px;
-}
-
-.section-small{
-    letter-spacing:1px;
-    font-size:12px;
-    color:black;
+<style>
+/* ==========================================
+   CONNECT PAGE
+========================================== */
+.section-label{
+    font-family:'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:.75rem;
     font-weight:600;
-
+    color:var(--gold);
+    margin-bottom:18px;
 }
 
-.contact-item{
+
+/* ================= SOCIAL ================= */
+.social-section{
+    padding:70px 0 100px;
+    text-align:center;
+}
+
+.social-section h2{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--navy);
+    font-size:clamp(2.4rem,4vw,3.5rem);
+}
+
+.social-section p{
+    color:#555;
+    max-width:650px;
+    margin:20px auto 30px;
+}
+
+.connect-social-links{
     display:flex;
+    justify-content:center;
     gap:15px;
-    margin-top:22px;
-    align-items:flex-start;
 }
 
-.contact-item i{
-    width:38px;
-    height:38px;
+
+.connect-social-links a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid var(--gold);
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:50%;
+    transition:.3s ease;
+}
+
+
+.connect-social-links i{
+
+    color:var(--gold);
+
+}
+
+
+.connect-social-links a:hover{
+
     background:var(--gold);
+
+}
+
+.connect-social-links a:hover i{
     color:white;
-    font-size:14px;
 }
 
-.contact-item h4{
-    margin:0 0 3px;
+.connect-social-links a::after{
+    display:none;
+}
+
+/* ================= VISIT ================= */
+
+
+.visit-section{
+
+    padding:100px 0;
+    background:#F7F4ED;
+
+}
+
+
+.visit-grid{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+
+}
+
+
+
+.visit-content h2{
+
     font-family:'Cormorant Garamond',serif;
-    font-size:20px;
+    color:var(--navy);
+    font-size:clamp(2.5rem,4vw,3.5rem);
+
 }
 
-.contact-item p{
-    margin:0;
+
+
+.visit-content p{
+
+    color:#444;
+    line-height:1.8;
+    margin-top:20px;
+
+}
+
+
+
+.visit-item{
+
+    margin-top:25px;
+
+}
+
+
+
+.visit-item strong{
+
+    color:var(--gold);
+
 }
 
 .map-container{
-    height:330px;
-    border-radius:20px;
+
+    height:300px;
+    border-radius:24px;
     overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.10);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.12);
+
 }
 
+
+
 .map-container iframe{
+
     width:100%;
     height:100%;
     border:0;
+
 }
 
-/* ==========================================
-   INQUIRY MODAL
-========================================== */
+
+
+@media(max-width:900px){
+
+    .visit-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
 
 .modal{
     position:fixed;
@@ -104,9 +184,11 @@
     z-index:9999;
 }
 
+
 .modal.active{
     display:flex;
 }
+
 
 .modal-content{
     background:white;
@@ -115,28 +197,6 @@
     padding:40px;
     border-radius:20px;
     position:relative;
-    animation:popup .35s ease;
-}
-
-.modal-content .btn{
-    width:auto;
-    display:inline-block;
-    align-self:center;
-    padding:14px 40px;
-}
-
-@keyframes popup{
-
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
 }
 
 
@@ -146,221 +206,289 @@
     top:15px;
     font-size:30px;
     cursor:pointer;
-    color:#999;
 }
 
-.modal-content h2{
-    font-family:'Cormorant Garamond',serif;
-    color:var(--gold);
-    font-size:42px;
-    margin-bottom:25px;
-}
-
-.modal-content form{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
-
-.modal-content input,
-.modal-content select,
-.modal-content textarea{
-    width:100%;
-    padding:15px 18px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    font-size:15px;
-    font-family:'Inter',sans-serif;
-}
-
-.modal-content textarea{
-    resize:vertical;
-    min-height:140px;
-}
-
-@media(max-width:900px){
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-}
-    </style>
+</style>
 
 </head>
 
 <body>
 <!-- ================= NAVIGATION ================= -->
 <header>
-    <div class="container nav-container">
-        <!-- LOGO (IMAGE) -->
-        <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="Divine Word Ministries Logo">
-        </a>
-        <!-- NAVIGATION -->
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="resources.html">RESOURCES</a></li>
-                <li><a href="blog.html">BLOG</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
+<div class="container nav-container">
+<a href="index.html" class="logo">
+<img src="images/logo.png">
+</a>
 
-         <!-- SEARCH BUTTON -->
+<nav>
+
+<ul class="nav-links">
+
+<li>
+<a href="index.html">
+HOME
+</a>
+</li>
+
+
+<li>
+<a href="about.html">
+ABOUT
+</a>
+</li>
+
+
+<li>
+<a href="resources.html">
+RESOURCES
+</a>
+</li>
+
+
+<li>
+<a href="blog.html">
+BLOG
+</a>
+</li>
+
+
+<li>
+<a href="contact.html">
+CONNECT
+</a>
+</li>
+
+
+</ul>
+
+</nav>
+
+
 <div class="nav-actions">
-    <a href="#" class="search-btn" aria-label="Search">
-        <i class="fas fa-search"></i>
-    </a>
+
+<a href="#" class="search-btn">
+
+<i class="fas fa-search"></i>
+
+</a>
+
+
 </div>
-        <!-- MOBILE MENU -->
-        <div class="menu-btn">
-            ☰
-        </div>
 
-    </div>
-
+</div>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-        <p class="hero-small">
-            Get in Touch
 
-        </p>
-        <h1>
-            Reach out to Us
-        </h1>
-         <button class="btn gold" id="openInquiry" style="border-color: white; background-color: white; 
-         color: rgb(77, 71, 71);" >
-    Send an Inquiry
-</button>
-    </div>
-</section>
+<div class="overlay"></div>
 
-<!-- ================= CONTACT LOCATION ================= -->
+<div class="hero-content">
 
-<section class="contact-location">
-    <div class="container contact-grid">
-        <div class="contact-info">
-            <h2>Connect with Us</h2>
+<p class="hero-small">
+CONTINUE THE JOURNEY</p>
 
-              <div class="social-links">
+<p>Continue growing through the Word, fellowship,
+and the life of Jesus Christ.</p>
 
-    <a style="border-color:var(--gold)" href="https://youtube.com/"
-       target="_blank"
-       aria-label="YouTube">
-        <i class="fab fa-youtube" style="color:var(--gold)"></i>
-    </a>
-
-    <a style="border-color:var(--gold)" href="https://facebook.com/"
-       target="_blank"
-       aria-label="Facebook">
-        <i class="fab fa-facebook-f" style="color:var(--gold)"></i>
-    </a>
-
-     <a style="border-color:var(--gold)" href="https://whatsapp.com/channel/0027VbCUIrP6rsR1pr3t3K3R"
-       target="_blank"
-       aria-label="WhatsApp">
-        <i class="fab fa-whatsapp" style="color:var(--gold)"></i>
-    </a>
+<a href="resources.html" class="btn gold" style="text-decoration: none;">
+Explore Resources</a>
 
 </div>
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <div>
-                    <p>thedivinewordministries@gmail.com</p>
-                </div>
-            </div>
 
-            <div class="contact-item">
-                <i class="fas fa-location-dot"></i>
-                <div>
-                    <p>
-                        Progress House Building,
-                        Middle Star Mall<br>
-                        Gaborone, Botswana
-                    </p>
-                </div>
-            </div>
+</section>
+<!-- ================= SOCIAL CONNECTION ================= -->
 
-            <div class="contact-item">
-                <i class="fas fa-clock"></i>
-                <div>
-                    <p> Sundays 9:30a.m - 12:30p.m</p>
-                </div>
-            </div>
-        </div>
+<section class="social-section">
+<div class="container">
 
-        <div class="map-container">
-            <iframe
-            src="https://www.google.com/maps?q=Middle%20Star%20Mall%20Gaborone%20Botswana&output=embed"
-            loading="lazy">
-            </iframe>
+<p class="section-label">Stay Connected</p>
 
-        </div>
+<h2>Engage</h2>
 
-    </div>
+<p>Follow us for updates.</p>
+
+<div class="connect-social-links">
+<a href="https://youtube.com/"
+target="_blank">
+
+<i class="fab fa-youtube"></i>
+
+</a>
+
+<a href="https://facebook.com/"
+target="_blank">
+
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://whatsapp.com/channel/0027VbCUIrP6rsR1pr3t3K3R"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= VISIT US ================= -->
+<section class="visit-section">
+
+<div class="container visit-grid">
+<div class="visit-content">
+<p class="section-label">Visit</p>
+
+<h2>Join Us</h2>
+
+<p>You're welcome to come and fellowship with us.</p>
+
+<div class="visit-item">
+
+<strong>
+Location
+</strong>
+
+<p>
+Progress House Building,
+Middle Star Mall<br>
+Gaborone, Botswana
+</p>
+
+</div>
+
+<div class="visit-item">
+
+<strong>Service Times</strong>
+
+<p>
+Sundays<br>
+9:30 a.m - 12:30 p.m
+</p>
+
+</div>
+
+<button class="btn gold" id="openInquiry">
+Send Us A Message
+</button>
+
+</div>
+
+<div class="map-container">
+
+<iframe
+src="https://www.google.com/maps?q=Middle%20Star%20Mall%20Gaborone%20Botswana&output=embed"
+
+loading="lazy">
+
+</iframe>
+
+</div>
+
+</div>
 
 </section>
 
 <!-- ================= INQUIRY MODAL ================= -->
 <div class="modal" id="inquiryModal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2>Make an Inquiry</h2>
-        <form>
-            <input
-                type="text"
-                placeholder="Full Name"
-                required>
 
-            <input
-                type="email"
-                placeholder="Email Address"
-                required>
+<div class="modal-content">
 
-            <input
-                type="tel"
-                placeholder="Phone Number (Optional)">
+<span class="close-modal">
 
-            <select required>
+&times;
 
-                <option value="">
-                    Select Inquiry Category
-                </option>
+</span>
 
-                <option>
-                    General Inquiry
-                </option>
+<h2>Send Us A Message</h2>
+<form>
 
-                <option>
-                    Visiting the Church
-                </option>
+<input
+type="text"
+placeholder="Full Name"
+required>
 
-                <option>
-                    Partnership
-                </option>
+<input
+type="email"
+placeholder="Email Address"
+required>
 
-                <option> Other
-                </option>
+<input
+type="tel"
+placeholder="Phone Number (Optional)">
 
-            </select>
+<select required>
 
-            <textarea
-                rows="6"
-                placeholder="Your Message"
-                required></textarea>
+<option value="">
 
-            <button
-                type="submit"
-                class="btn gold">
-                SEND
-            </button>
-        </form>
+Select Inquiry Category
+</option>
 
-    </div>
+<option>
+General Inquiry
+</option>
+
+<option>
+Visiting the Church
+</option>
+
+<option>
+
+Partnership
+
+</option>
+
+
+
+<option>
+
+Other
+
+</option>
+
+
+
+</select>
+
+
+
+
+
+<textarea
+
+placeholder="Your Message"
+
+required>
+
+</textarea>
+
+
+
+
+
+<button
+
+type="submit"
+
+class="btn gold">
+
+SEND
+
+</button>
+
+
+
+
+</form>
+
+
+
+
+</div>
+
+
 </div>
 
 <!-- ================= FOOTER ================= -->
@@ -368,7 +496,7 @@
     <div class="container footer-grid">
         <div>
             <h3>
-                THE DIVINE WORD MINISTRIES
+                The Divine Word Ministries
         <div class="social-links">
 
     <a href="https://youtube.com/"
@@ -383,7 +511,7 @@
         <i class="fab fa-facebook-f"></i>
     </a>
 
-     <a href="https://whatsapp.com/channel/0027VbCUIrP6rsR1pr3t3K3R"
+    <a href="https://whatsapp.com/channel/0027VbCUIrP6rsR1pr3t3K3R"
        target="_blank"
        aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -391,43 +519,72 @@
 
 </div>
         </div>
-         <div>
+        <div>
              <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="resources.html">Blog</a></li>
                 <li><a href="blog.html">Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Connect</a></li>
             </ul>
         </div>
-
     </div>
 
     <div class="copyright">
-        © 2026 The Divine Word Ministries. <br>
-        All Rights Reserved. <br> Made by KORA
+        © 2026 The Divine Word Ministries. All Rights Reserved. <br>Made by KORA
     </div>
+
 </footer>
 
 <script>
-   document.addEventListener("DOMContentLoaded", function(){
 
-    const openBtn = document.getElementById("openInquiry");
-    const modal = document.getElementById("inquiryModal");
-    const closeBtn = document.querySelector(".close-modal");
+document.addEventListener("DOMContentLoaded", function(){
 
-    openBtn.addEventListener("click", function(){
-        modal.classList.add("active");
-    });
-    closeBtn.addEventListener("click", function(){
-        modal.classList.remove("active");
-    });
+const openBtn =
+document.getElementById("openInquiry");
 
-    window.addEventListener("click", function(e){
-        if(e.target === modal){
-            modal.classList.remove("active");
-        }
-    });
+const modal =
+document.getElementById("inquiryModal");
+const closeBtn =
+document.querySelector(".close-modal");
+
+if(openBtn){
+
+openBtn.addEventListener("click", function(){
+
+modal.classList.add("active");
+
 });
+
+}
+
+if(closeBtn){
+
+closeBtn.addEventListener("click", function(){
+
+modal.classList.remove("active");
+
+});
+
+}
+
+window.addEventListener("click", function(e){
+
+
+if(e.target === modal){
+modal.classList.remove("active");
+
+}
+
+});
+
+
+});
+
+
 </script>
+
+
+
 </body>
+
 </html>
