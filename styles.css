@@ -98,12 +98,12 @@ nav{
 .nav-links a {
     text-decoration: none;
     position: relative;
-    text-transform: uppercase;
+    
     transition: 0.3s;
     font-family: 'Inter', sans-serif;
-    font-size:12px;
+    font-size:15px;
     font-weight:600;
-    letter-spacing:2.8px;
+    
     color:rgba(0,0,0,.82);
 }
 
@@ -133,22 +133,26 @@ nav{
     align-items:center;
     grid-column:3;
 }
-
-
 /* SEARCH BUTTON */
 .search-btn {
     width: 42px;
     height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: var(--gold);
-    background: rgba(255,255,255,0.8);
-    font-size: 18px;
-    text-decoration: none;
-    transition: .3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    border:1px solid transparent;
+
+    color:var(--gold);
+    background:rgba(255,255,255,0.8);
+
+    font-size:18px;
+    text-decoration:none;
+
+    transition:.3s ease;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
 .search-btn:hover {
@@ -264,6 +268,8 @@ nav{
     }
 }
 
+
+
 /* Mobile menu button */
 
 .menu-btn {
@@ -285,10 +291,10 @@ nav{
     color:white;
     background:
         linear-gradient(
-            rgba(31,78,121,.82),
-            rgba(10,20,40,.85)
+            rgba(170, 123, 3, 0.25),
+            rgba(170, 123, 3, 0.25)
         ),
-        url("images/hero.jpg") center/cover no-repeat;
+        url("images/herobg.png") center/cover no-repeat;
 }
 
 
@@ -322,26 +328,28 @@ nav{
     letter-spacing:4px;
     font-size:.78rem;
     font-weight:600;
-     opacity:.95;
+    opacity:.95;
     color:white;
 }
 
 .hero h1{
     font-family:'Cormorant Garamond', serif;
-    font-size:clamp(3.5rem,7vw,4.5rem);
-    font-weight:600;
+    font-size:clamp(3.1rem,7vw,4.5rem);
+    font-weight:450;
      line-height:1.05;
-    letter-spacing:-2px;
     margin-bottom:28px;
-    color:white;
+      color:#906d1d;
+
 }
 
 .hero p{
-    font-size:1.15rem;
+    font-size:1.7rem;
+    font-family:'Cormorant Garamond', serif;
     line-height:1.9;
     max-width:650px;
     margin:0 auto 40px;
-    color:rgba(255,255,255,.88);
+    color:rgba(6, 2, 51, 0.523);
+    letter-spacing: 1px;
 
 }
 
@@ -416,6 +424,14 @@ section{
     margin:0 auto;
 }
 
+/* Remove default browser button styling */
+button.btn{
+    appearance:none;
+    -webkit-appearance:none;
+    border:none;
+    outline:none;
+    cursor:pointer;
+}
 
 /* ================= ABOUT PREVIEW ================= */
 
@@ -458,9 +474,9 @@ section{
 
 .about-intro h3{
     font-family:'Cormorant Garamond',serif;
-      font-size:clamp(2.8rem,5vw,5rem);
+      font-size:clamp(2.6rem,5vw,5rem);
     line-height:1.05;
-    font-weight:600;
+    font-weight:450;
     color:white;
     margin:0;
 }
@@ -544,8 +560,8 @@ section{
 .resources .section-heading h2{
     font-family:'Cormorant Garamond', serif;
     font-size:clamp(3rem,5vw,4.2rem);
-    font-weight:600;
-    color:var(--navy);
+    font-weight:450;
+    color:#333;
     line-height:1.05;
     letter-spacing:-1.5px;
     margin-bottom:18px;
@@ -556,7 +572,7 @@ section{
     font-size:1.12rem;
     line-height:1.85;
     font-weight:400;
-    color:rgba(17,32,66,.75);
+    color:#333;
     max-width:650px;
     margin:0 auto;
 }
@@ -616,8 +632,8 @@ section{
     align-items:center;
     padding:7px 14px;
     border-radius:50px;
-    background:#F5E6A1;
-    color:#6E5600;
+    background:#b4a14e;
+    color:white;
     font-size:.72rem;
     font-weight:600;
     letter-spacing:1px;
@@ -626,8 +642,8 @@ section{
 }
 
 .resource-badge.article{
-    background:#E8F1FF;
-    color:#1F4E79;
+    background:#808a99;
+    color:#f1f4f7;
 }
 
 /* ================= IMAGE ================= */
@@ -660,7 +676,7 @@ section{
     font-size:2rem;
     line-height:1.15;
     font-weight:600;
-    color:var(--navy);
+    color:#09223a;
     margin:0 0 16px;
     min-height:78px;
 }
@@ -927,7 +943,7 @@ body.blog-page{
 
 .featured-blog img{
     width:100%;
-    height:380px;
+    height:380px; 
     object-fit:cover;
     border-radius:15px;
 }
