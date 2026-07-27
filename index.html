@@ -16,18 +16,26 @@
    HOME PAGE HERO ONLY
 ========================================== */
 
-.hero-home{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    text-align:left;
-    padding:0 8%;
-    height:82vh;
-    min-height:650px;
+@media (max-width:768px){
 
-    background:
-        url("images/hero.png") center center/cover no-repeat;
+    .hero-home{
+
+        height:75vh;
+        min-height:550px;
+
+          background:
+            linear-gradient(
+                rgba(255,255,255,.35),
+                rgba(255,255,255,.35)
+            ),
+            url("images/heroMobile.png") 75% center / cover no-repeat;
+
+        justify-content:center;
+        text-align:center;
+        padding:0 25px;
+        background-position:70% center;
+    }
+
 }
 
 /* Optional dark overlay so text is readable */
