@@ -1156,7 +1156,42 @@ body.blog-page{
 
 /* ================= MOBILE NAV ================= */
 
-@media (max-width: 768px){
+/* ==========================
+   HOME HERO - MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .hero-home{
+
+        height:70vh;
+        min-height:520px;
+
+        justify-content:center;
+        text-align:center;
+
+        padding:0 30px;
+
+       background-position:30% center;;
+    }
+
+    .hero-home .hero-content{
+
+        max-width:100%;
+        margin:0;
+    }
+
+    .hero-home h1{
+
+        font-size:clamp(2.4rem,8vw,3.2rem);
+        line-height:1.15;
+    }
+
+    .hero-home p{
+
+        font-size:1rem;
+    }
+
 
     .nav-container{
         display:flex;
@@ -1177,28 +1212,46 @@ body.blog-page{
     }
 
     .menu-btn{
-        display:flex;
-        justify-content:center;
-        align-items:center;
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
 
-        width:42px;
-        height:42px;
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after{
+    display:block;
+    width:24px;
+    height:2px;
+    background:#041627;
+    border-radius:2px;
+    position:relative;
+    transition:.3s;
+}
 
-        border-radius:50%;
-        background:white;
-        color:var(--gold);
+.menu-btn span::before,
+.menu-btn span::after{
+    content:"";
+    position:absolute;
+    left:0;
+}
 
-        cursor:pointer;
+.menu-btn span::before{
+    top:-7px;
+}
 
-        box-shadow:0 5px 15px rgba(0,0,0,.08);
+.menu-btn span::after{
+    top:7px;
+}
 
-        transition:.3s;
-    }
-
-    .menu-btn:hover{
-        background:var(--gold);
-        color:white;
-    }
+.menu-btn:hover span,
+.menu-btn:hover span::before,
+.menu-btn:hover span::after{
+    background:var(--gold);
+}
 
     nav{
 
