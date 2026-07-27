@@ -840,7 +840,6 @@ footer p {
     color:white;
     font-size:20px;
     text-decoration:none;
-    border:2px solid rgba(255,255,255,0.4);
     transition:0.3s ease;
 }
 
@@ -1154,6 +1153,10 @@ body.blog-page{
     }
 }
 
+.menu-btn{
+    display:none;
+}
+
 /* ================= MOBILE NAV ================= */
 
 /* ==========================
@@ -1192,7 +1195,7 @@ body.blog-page{
         line-height:1.15;
     }
 
-}
+
 
     .hero-home p{
 
@@ -1221,51 +1224,19 @@ body.blog-page{
     .menu-btn{
     width:42px;
     height:42px;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     background:none;
     border:none;
-
     cursor:pointer;
-
     color:#041627;
     font-size:28px;
-
     transition:.3s ease;
 }
 
 .menu-btn:hover{
     color:var(--gold);
-}
-
-.menu-btn span,
-.menu-btn span::before,
-.menu-btn span::after{
-    display:block;
-    width:24px;
-    height:2px;
-    background:#041627;
-    border-radius:2px;
-    position:relative;
-    transition:.3s;
-}
-
-.menu-btn span::before,
-.menu-btn span::after{
-    content:"";
-    position:absolute;
-    left:0;
-}
-
-.menu-btn span::before{
-    top:-7px;
-}
-
-.menu-btn span::after{
-    top:7px;
 }
 
 
@@ -1324,6 +1295,9 @@ body.blog-page{
 
         font-size:13px;
     }
+
+}
+
 
 @keyframes fadeMenu{
 
